@@ -55,7 +55,12 @@ module adder(
 
 	//assign sum_o = data_1_i + data_2_i;
 	always @(posedge clk_i) begin 
-		sum_o <= data_1_i + data_2_i;
+		if(~rst_n_i) begin
+			sum_o <= 0;
+		end
+		else begin
+			sum_o <= data_1_i + data_2_i;
+		end
 	end
 
 //----------------------------------------------------------------------------------------------------------------------

@@ -11,7 +11,7 @@ class tb_sequence extends uvm_sequence#(trans1);
 		if (starting_phase != null)
         starting_phase.raise_objection(this);
 
-		repeat(5) begin
+		repeat(50) begin
 			tx = trans1::type_id::create("tx");
 			start_item(tx);
 			assert(tx.randomize());

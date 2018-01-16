@@ -38,7 +38,7 @@ function trans1 sb_predictor::sb_calc_exp (trans1 t);
 	
 	sum = next_sum2;
 	next_sum2 = next_sum1;
-	next_sum1 = t.data_1 + t.data_2;
+	next_sum1 = (t.rst_n) ? t.data_1 + t.data_2 : 0;
 	// copy all sampled inputs & outputs
 	tr.copy(t);
 	// overwrite the sum values with the calculated values.
